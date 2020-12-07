@@ -1,9 +1,8 @@
-from aws_cdk import (
-    aws_s3 as _s3,
-    aws_iam as _iam,
-    aws_kms as _kms,
-    core
-    )
+from aws_cdk import aws_iam as _iam
+from aws_cdk import aws_kms as _kms
+from aws_cdk import aws_s3 as _s3
+from aws_cdk import core
+
 
 class MyArtifactBucketStack(core.Stack):
 
