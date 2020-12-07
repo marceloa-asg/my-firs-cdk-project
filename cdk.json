@@ -12,6 +12,8 @@
         "account": "712226258223"
       },
       "prod": {
+        "stack-team-support-email": "abc@xyz.com",
+        "stack-level-tagging": "sample_tag_value",
         "region": "us-east-1",
         "account": "712226258223",
         "entription": true,
