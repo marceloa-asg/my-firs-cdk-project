@@ -1,4 +1,5 @@
 from aws_cdk import aws_ec2 as _ec2
+from aws_cdk import aws_s3 as _s3
 from aws_cdk import core
 
 
@@ -27,8 +28,12 @@ class CustomVpcStack(core.Stack):
                 )
             ]
         )
-        
+        core.Tags.of(custom_vpc).add("Owner", "Mystique")
+       
         core.CfnOutput(self,
                        "customVpcOutput",
                        value=custom_vpc.vpc_id,
                        export_name="customVpcId")
+
+        my_bkt = _s3.Bucket(self,"mycustombucket")
+        core.Tags.of(my_bkt).add( "Owner", "Mystique")
