@@ -1,10 +1,11 @@
-from aws_cdk import aws_iam as _iam
+"""My First App. """
+# from aws_cdk import aws_iam as _iam
 from aws_cdk import aws_kms as _kms
 from aws_cdk import aws_s3 as _s3
 from aws_cdk import core
 
-
 class MyArtifactBucketStack(core.Stack):
+    """My first artifact bucket stack."""
 
     def __init__(self, scope: core.Construct, construct_id: str, is_prod=False, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
@@ -27,4 +28,5 @@ class MyArtifactBucketStack(core.Stack):
             artifactBucket = _s3.Bucket(self,
                                  "myDevArtifactBucket",
                                  removal_policy=core.RemovalPolicy.DESTROY)
+        print(artifactBucket.bucket_name)
             
